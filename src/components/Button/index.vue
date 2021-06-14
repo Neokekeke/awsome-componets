@@ -22,9 +22,8 @@ export default {
         }
     },
     methods: {
-        onClick(){
-            console.log(`btn ${this.type} click`);
-            this.$emit('onClick');
+        onClick(e){
+            this.$emit('onClick', { event: e, btnType: this.type });
         }
     }
 };

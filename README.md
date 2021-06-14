@@ -10,10 +10,11 @@ npm i @neokekeke/k-ui
 ```
 import Vue from 'vue'
 import NeoUI from '@neokekeke/k-ui'
-import '@neokekeke/k-ui/lib/k-ui.css';
+import '@neokekeke/k-ui/lib/css/k-ui.css';
 
 Vue.use(NeoUI)
 
+<!-- 引入Button组件 -->
 <template>
   <div class="test-container">
    <n-button></n-button>

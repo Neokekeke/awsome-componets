@@ -44,7 +44,7 @@ module.exports = merge(base, {
         minimize: true,
         minimizer: [
             new TerserPlugin({
-                sourceMap: true, // 开启sourceMap
+                sourceMap: false, // 开启sourceMap
                 parallel: false,
                 terserOptions: {
                     ecma: 8,

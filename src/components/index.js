@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './styles/index.less';
-import Button from '@components/Button';
+import Button from '@components/Button/index.js';
 
 // 导入的组件列表
 const components = [
@@ -18,6 +18,9 @@ if (typeof window !== 'undefined' && window.Vue){
     install(window.Vue);
 }
 
+console.log('window---', window, Button);
+
 export default {
+    install,
     Button
 };
