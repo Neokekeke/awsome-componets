@@ -1,6 +1,6 @@
 {
   "name": "@neokekeke/k-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "k-ui componets",
   "private": false,
   "main": "./lib/k-ui.js",
