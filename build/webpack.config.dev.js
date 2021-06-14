@@ -35,8 +35,6 @@ module.exports = merge(base, {
                 'postcss-loader', // process CSS with PostCSS addprefix
                 'less-loader', // compiles Less to CSS
             ],
-            // exclude: [path.resolve(__dirname, '../node_modules')],
-            // include: [path.resolve(__dirname, '../node_modules/element-ui/lib/theme-chalk')]
         }, ]
     },
     plugins: [

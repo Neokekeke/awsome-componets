@@ -1,0 +1,50 @@
+@import url('../common/vars.less');
+
+.n-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: @color-normal;
+    border: 1px solid @color-border-normal;
+    color: @color-font-light;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: 0.1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+
+    &:hover {
+        filter: brightness(115%);
+        border: 1px solid @color-border-normal;
+    }
+}
+
+.n-button-normal {
+    background: @color-normal;
+    color: @color-font-normal;
+}
+
+.n-button-primary {
+    background: @color-primary;
+}
+
+.n-button-success {
+    background: @color-success;
+}
+
+.n-button-warning {
+    background: @color-warning;
+}
+
+.n-button-error {
+    background: @color-error;
+}

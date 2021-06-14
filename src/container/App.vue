@@ -1,15 +1,22 @@
 <template>
   <div class="test-container">
     <h1>Awsome Components Start Here ！</h1>
-    <ul>
-      <li><NButton></NButton></li>
-      <li>
-        <NButton
-          type="primary"
-          @onClick="onClick"
-        ></NButton>
-      </li>
-    </ul>
+    <h1>Created By Neokekeke ！</h1>
+    <div id="gap"></div>
+    <div class="test-component-container">
+      <h2>Button</h2>
+      <ul>
+        <li
+          v-for="item in btnType"
+          :key="item"
+        >
+          <n-button
+            :type="item"
+            @onClick="onClick"
+          ></n-button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -18,7 +25,12 @@ import NButton from '../components/Button/index.vue';
 export default {
     name: 'APP',
     components: {
-        NButton
+        'n-button': NButton
+    },
+    data(){
+        return {
+            btnType: ['normal', 'primary', 'success', 'warning','error']
+        };
     },
     methods: {
         onClick(){
@@ -29,26 +41,42 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import url("../components/styles/common/vars.less");
+
 .test-container {
     padding: 50px;
 
-    div {
-        margin: 10px 0;
+    #gap {
+        height: 1px;
+        background: @color-border-normal;
     }
 
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-        display: flex;
-        align-items: center;
+    .test-component-container {
+        margin: 10px 0;
 
-        li {
-            margin: 5px;
+        h2 {
+            font-size: @font-size-20;
+            font-weight: normal;
         }
 
-        li:first-child {
-            margin-left:  0;
+        ul {
+            border: 1px solid @color-border-normal;
+            background: @color-component-bg;
+            padding: 20px;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            flex-flow: row wrap;
+
+            li {
+                margin: 5px;
+                margin-right: 15px;
+            }
+
+            li:first-child {
+                margin-left: 0;
+            }
         }
     }
 }

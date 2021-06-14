@@ -1,6 +1,6 @@
 {
   "name": "@neokekeke/k-ui",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "k-ui componets",
   "private": false,
   "main": "./lib/k-ui.js",
@@ -12,12 +12,12 @@
     "build-dev": "rimraf dist && cross-env NODE_ENV=development webpack --config ./build/webpack.config.js --progress --profile --colors --display-error-details",
     "build-test": "rimraf dist && cross-env NODE_ENV=production webpack --config ./build/webpack.config.js --progress --profile --colors --display-error-details",
     "build-prod": "rimraf dist && cross-env NODE_ENV=production webpack --config ./build/webpack.config.js --progress --profile --colors --display-error-details",
-    "build-prepub": "rimraf dist && cross-env NODE_ENV=production webpack --config ./build/webpack.config.publish.js --progress --profile --colors --display-error-details",
+    "build-prepub": "rimraf lib && cross-env NODE_ENV=production webpack --config ./build/webpack.config.publish.js --progress --profile --colors --display-error-details",
     "analyz": "rimraf dist && cross-env NODE_ENV=production webpack --config ./build/webpack.config.analyz.js --progress --profile --colors --display-error-details",
     "start-webpack-dev-server": "webpack-dev-server --open",
     "start-express": "cross-env NODE_ENV=development node server.js",
     "rimraf": "rimraf dist",
-    "publish:prod": "npm version patch && npm run build-prepub && npm publish --access=public"
+    "publish:prod": "rimraf lib && npm version patch && npm run build-prepub && npm publish --access=public"
   },
   "keywords": [
     "vue",
