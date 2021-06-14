@@ -10,7 +10,7 @@ module.exports = merge(base, {
     mode: 'production',
     entry: path.resolve(__dirname, '../src/components/index.js'),
     output: {
-        filename: 'k-ui.js', // contentHash 针对文件内容级别的修改，只有文件模块内容改变，hash值才会改变，合理加快打包和缓存
+        filename: 'k-ui.js',
         path: path.resolve(__dirname, '../lib'),
         publicPath: '/lib/',
         library: 'k-ui',
@@ -26,7 +26,15 @@ module.exports = merge(base, {
                         hmr: false, // hmr热更新
                     },
                 }, // style-loader creates style nodes from JS strings
-                'css-loader',
+                {
+                    loader: 'css-loader', // translates CSS into CommonJS
+                    options: {
+                        modules: {
+                            mode: 'local', // enable css module 模块化
+                            localIdentName: '[local]', // 模块化名称
+                        },
+                    },
+                },
                 'postcss-loader', // process CSS with PostCSS addprefix
                 'less-loader', // compiles Less to CSS
             ],
