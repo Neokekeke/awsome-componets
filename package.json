@@ -17,7 +17,7 @@
     "start-webpack-dev-server": "webpack-dev-server --open",
     "start-express": "cross-env NODE_ENV=development node server.js",
     "rimraf": "rimraf dist",
-    "publish:prod": "node sh/publish.txt"
+    "publish:prod": "npm version patch && npm run build-prepub && npm publish --access=public"
   },
   "keywords": [
     "vue",
