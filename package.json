@@ -74,6 +74,7 @@
     "workbox-webpack-plugin": "^5.1.3"
   },
   "dependencies": {
+    "@neokekeke/k-ui": "^0.0.7",
     "core-js": "^3.9.1",
     "element-ui": "^2.15.2",
     "ramda": "^0.27.1",

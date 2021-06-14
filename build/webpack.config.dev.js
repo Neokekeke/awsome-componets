@@ -47,4 +47,7 @@ module.exports = merge(base, {
             minify: false
         }),
     ],
+    externals: {
+        'k-ui': 'k-ui',
+    },
 });
