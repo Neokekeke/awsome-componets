@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="nb-button"
+      class="n-button"
       :style="{
         background: btnColorBase[type],
         color: colorBase[type] || colorBase['white']
@@ -51,10 +51,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-html {
-    font-size: 16px;
-}
-.nb-button {
+.n-button {
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
