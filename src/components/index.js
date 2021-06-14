@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import './index.less';
 import Button from '@components/Button';
 
 // 导入的组件列表
