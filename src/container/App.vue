@@ -21,20 +21,16 @@
 </template>
 
 <script>
-import NButton from '../components/Button/index.vue';
 export default {
     name: 'APP',
-    components: {
-        'n-button': NButton
-    },
     data(){
         return {
-            btnType: ['normal', 'primary', 'success', 'warning','error']
+            btnType: ['normal', 'primary', 'success', 'warning', 'error']
         };
     },
     methods: {
-        onClick(){
-            console.log('click the btn');
+        onClick({ btnType }){
+            console.log(`click the ${btnType} btn`);
         }
     }
 };
