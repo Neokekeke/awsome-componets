@@ -3,6 +3,8 @@
     <h1>Awsome Components Start Here ！</h1>
     <h1>Created By Neokekeke ！</h1>
     <div id="gap"></div>
+
+    <!-- Button -->
     <div class="test-component-container">
       <h2>Button</h2>
       <ul>
@@ -17,6 +19,21 @@
         </li>
       </ul>
     </div>
+
+    <!-- Progress -->
+    <div class="test-component-container">
+      <h2>Progress</h2>
+      <ul>
+        <li>
+          <n-progress
+            :percent="percent"
+            @onStop="onStop"
+            @onRefresh="onRefresh"
+          >
+          </n-progress>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -25,12 +42,36 @@ export default {
     name: 'APP',
     data(){
         return {
-            btnType: ['normal', 'primary', 'success', 'warning', 'error']
+            btnType: ['normal', 'primary', 'success', 'warning', 'error'],
+            percent: 0,
+            timer: null
         };
+    },
+    mounted(){
+        this.timer = setInterval(() => {
+            if (this.percent < 100){
+                this.percent += 20;
+            } else {
+                this.percent = 0;
+            }
+        }, 1000);
+    },
+    destroyed(){
+        this.clearTimer();
     },
     methods: {
         onClick({ btnType }){
             console.log(`click the ${btnType} btn`);
+        },
+        onStop(percent){
+            console.log('暂停当前进度', percent);
+            this.clearTimer();
+        },
+        onRefresh(percent){
+            this.percent = percent;
+        },
+        clearTimer(){
+            this.timer && clearInterval(this.timer);
         }
     }
 };
@@ -68,6 +109,7 @@ export default {
             li {
                 margin: 5px;
                 margin-right: 15px;
+                position: relative;
             }
 
             li:first-child {
