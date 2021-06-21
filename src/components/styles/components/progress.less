@@ -1,0 +1,16 @@
+@import url('../common/vars.less');
+
+.n-progress {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .n-progress-normal {
+        background: @color-primary;
+        height: 20px;
+        transition: width 0.3s linear;
+        border: 1px solid @color-transparent;
+        border-radius: 10px;
+    }
+}

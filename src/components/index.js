@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import './styles/index.less';
 import Button from '@components/Button/index.js';
+import Progress from '@components/Progress/index.js';
 
 // 导入的组件列表
 const components = [
-    Button
+    Button,
+    Progress
 ];
 
 // 注册导入的组件
@@ -22,5 +24,6 @@ console.log('window---', window, Button);
 
 export default {
     install,
-    Button
+    Button,
+    Progress
 };
